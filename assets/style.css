@@ -1,0 +1,59 @@
+:root {
+    --orange: rgb(226, 112, 19);
+    --yellow: rgb(221, 191, 58);
+    --black: rgb(0, 0, 0);
+    --gray: rgb(44, 41, 41);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: var(--orange);
+    display: flex;
+    height: 3rem;
+    justify-content: space-around;
+}
+
+body {
+    background-color: var(--yellow);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    line-height: 1.3;
+}
+
+#navbar{
+    font-size: 30px;
+    color: var(--black);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#navbar:hover{
+    color: var(--gray);
+}
+
+#mealimg {
+    width: 100%;
+}
+
+#maintitle {
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+#explain {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 110%;
+    text-align: center;
+    word-spacing: 5px;
+    font-family: 'Gentium Book Basic', serif;
+}

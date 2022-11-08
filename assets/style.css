@@ -26,6 +26,18 @@ body {
     line-height: 1.3;
 }
 
+h3 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Gentium Book Basic', serif;
+}
+
+label {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Gentium Book Basic', serif;
+}
+
 #navbar{
     font-size: 30px;
     color: var(--black);
@@ -37,14 +49,16 @@ body {
     color: var(--gray);
 }
 
-#mealimg {
-    width: 100%;
-}
-
 #maintitle {
     font-size: 100px;
     text-align: center;
     font-family: 'Dancing Script', cursive;
+}
+
+
+/* Main page - index.html */
+#mealimg {
+    width: 100%;
 }
 
 #explain {
@@ -56,4 +70,40 @@ body {
     text-align: center;
     word-spacing: 5px;
     font-family: 'Gentium Book Basic', serif;
+}
+
+/* Recipe search page - recipe_page.html */
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.searchfood{
+    flex: 0 0 400px;
+    padding: 10px;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: var(--);
+    color: var(--cream);
+}
+
+
+@media screen and (max-width: 992px) {
+    main,
+    nav {
+      flex-direction: column;
+    }
+    nav {
+        height: 11rem;
+        justify-content: center;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    main,
+    nav {
+      flex-direction: column;
+    }
 }

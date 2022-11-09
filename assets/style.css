@@ -13,12 +13,20 @@
     margin: 0;
 }
 
+/* .wrapper {
+    width: 100%;
+}
+
 nav {
-    background-color: var(--orange);
     display: flex;
     height: 3rem;
     justify-content: space-around;
-}
+    overflow: hidden;
+    width: 1534px;
+    margin: 0 auto;
+    background-color: var(--orange);
+    float: left;
+} */
 
 body {
     background-color: var(--yellow);
@@ -75,12 +83,12 @@ label {
 }
 
 /* Recipe search page - recipe_page.html */
-.content {
+/* .content {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     max-height: 30rem;
-}
+} */
 
 /* .searchfood{
     flex: 0 0 400px;
@@ -132,20 +140,29 @@ label {
     background-color: var(--lightbrown);
 } */
 
-
+/* 1920px */
+/* @media screen and (max-width: 1920px) {
+    nav {
+        width: 1920px;
+    }
+}
 @media screen and (max-width: 992px) {
-    main,
+    body,
     nav {
       flex-direction: column;
     }
     nav {
         height: 11rem;
         justify-content: center;
+        width: 992px;
+        overflow: hidden;
     }
   }
-  @media screen and (max-width: 768px) {
-    main,
+@media screen and (max-width: 768px) {
     nav {
-      flex-direction: column;
+        width: 768px;
+        overflow: hidden;
+        flex-direction: column;
     }
-}
+    
+} */

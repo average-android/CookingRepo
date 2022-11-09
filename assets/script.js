@@ -2,18 +2,21 @@
 let drinkSearch = document.querySelector("#drinkrecipeSearch")
 let mealSearch = document.querySelector("#mealrecipeSearch")
 
+// drinkSearch.addEventListener('submit', drinkSubmit)
 
-// drinkButton.addEventListener("click", function(event) {
-//   event.preventDefault();
-drinkrecipeSearch.addEventListener('key up')
-fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkSearch)
+
+drinkButton.addEventListener("click", drinkSubmit) 
+
+function drinkSubmit (event){
+  event.preventDefault();
+fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkSearch.value)
 .then(function (response) {
   return response.json();
 })
 .then(function (data) {
   console.log(data);
 });
-
+}
 ;
 
 

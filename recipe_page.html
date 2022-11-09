@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gentium+Book+Basic&display=swap" rel="stylesheet">
     <title>Document</title>
@@ -14,23 +15,26 @@
     <a href="/html/" id="navbar">Main</a>
     <a href="/html/" id="navbar">Schedule</a>
 </nav>
-<body>
+<body class="justify-evenly max-w-screen-2xl">
     <div class="mainsection">
         <h1 id="maintitle">Recipe Search</h1>
     </div>
-    <section class="content">
-        <div class="searchfood">
-            <h3>Search for Meal Recipes</h3>
-            <label for="mealrecipeSearch">Search:</label>
+    <section class="container mx-auto gap-8 md:columns-3 sm:columns-1 flex flex-row flex-wrap font-serif">
+        <div class="w-1/3 flex-none p-8 ml-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black">
+            <h3 class="text-3xl px-4 pb-4">Search for Meal Recipes</h3>
+            <label for="mealrecipeSearch" class="pl-20">Search:</label>
             <input type="text" id="mealrecipeSearch" name="mealrecipeSearch">
+            <section class="results hidden"></section>
         </div>
-        <div class="searchdrinks">
-            <h3>Search for Drink Recipes</h3>
-            <label for="drinkrecipeSearch">Search:</label>
+        <div class="w-1/3 flex-wrap flex-none p-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black">
+            <h3 class="text-3xl px-4 pb-4">Search for Drink Recipes</h3>
+            <label for="drinkrecipeSearch" class="pl-20">Search:</label>
             <input type="text" id="drinkrecipeSearch" name="drinkrecipeSearch">
+            <section class="results hidden"></section>
         </div>
-        <div class="saved">
-            <h3>Saved Recipes</h3>
+        <div class="w-1/4 flex-wrap flex-none p-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black">
+            <h3 class="text-3xl px-4 pb-4">Saved Recipes</h3>
+            <section class="savedlist hidden"></section>
         </div>
     </section>
     <script type="text/javascript" src="./assets/script.js"></script>

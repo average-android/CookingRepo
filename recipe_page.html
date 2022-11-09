@@ -9,33 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gentium+Book+Basic&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<nav class="relative w-full flex flex-wrap items-center justify-around py-4 bg-orange-500 hover:text-gray-500 shadow-lg navbar navbar-expand-lg">
-    <a href="/html/" id="navbar">Recipes</a>
-    <a href="/html/" id="navbar">Ingredients</a>
-    <a href="/html/" id="navbar">Main</a>
-    <a href="/html/" id="navbar">Schedule</a>
+<nav class="relative w-full flex flex-wrap items-center justify-around py-4 bg-orange-500 shadow-lg navbar navbar-expand-lg">
+    <a href="recipe_page.html" id="navbar" class="hover:text-gray-500">Recipes</a>
+    <!-- <a href="/html/" id="navbar" class="hover:text-gray-500">Ingredients</a> -->
+    <a href="index.html" id="navbar" class="hover:text-gray-500">Main</a>
+    <a href="/html/" id="navbar" class="hover:text-gray-500">Schedule</a>
 </nav>
 <body class="justify-evenly bg-amber-400">
     <div class="mainsection">
-        <h1 id="maintitle">Recipe Search</h1>
+        <h1 class="text-8xl p-7">Recipe Search</h1>
     </div>
-    <section class="container mx-auto gap-8 md:columns-3 sm:columns-1 flex flex-row flex-wrap font-serif">
-        <div class="w-1/3 flex flex-wrap flex-auto p-8 ml-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black shadow-md">
-            <h3 class="text-3xl px-4 pb-4">Search for Meal Recipes</h3>
-            <label for="mealrecipeSearch" class="pl-20">Search:</label>
-            <input type="text" id="mealrecipeSearch" name="mealrecipeSearch">
-            <button type="submit" id="mealButton" class=" bg-orange-500 hover:bg-orange-300 shadow-sm rounded-r-lg px-1">Go</button>
+    <section class="container mx-auto gap-8 p-8 md:columns-3 sm:columns-1 flex flex-row flex-wrap font-serif">
+        <div class="w-1/3 flex flex-wrap flex-auto p-8 ml-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black shadow-md justify-center">
+            <h3 class="text-3xl pb-4 text-center justify-self-center">Search for Meal Recipes</h3>
+            <section class="justify-center">
+                <label for="mealrecipeSearch">Search:</label>
+                <input type="text" id="mealrecipeSearch" name="mealrecipeSearch">
+                <button type="submit" id="mealButton" class=" bg-orange-500 hover:bg-orange-300 shadow-sm rounded-lg px-1">Go</button>
+            </section>
             <section class="results hidden"></section>
         </div>
-        <div class="w-1/3 flex flex-wrap flex-auto p-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black shadow-md">
-            <h3 class="text-3xl px-4 pb-4">Search for Drink Recipes</h3>
-            <label for="drinkrecipeSearch" class="pl-20">Search:</label>
-            <input type="text" id="drinkrecipeSearch" name="drinkrecipeSearch">
-            <button type="submit" id="drinkButton" class=" bg-orange-500 hover:bg-orange-300 shadow-sm rounded-r-lg px-1">Go</button>
+        <div class="w-1/3 flex flex-wrap flex-auto p-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black shadow-md justify-center">
+            <h3 class="text-3xl pb-4 text-center">Search for Drink Recipes</h3>
+            <section class="justify-center">
+                <label for="mealrecipeSearch">Search:</label>
+                <input type="text" id="mealrecipeSearch" name="mealrecipeSearch">
+                <button type="submit" id="mealButton" class=" bg-orange-500 hover:bg-orange-300 shadow-sm rounded-lg px-1">Go</button>
+            </section>
             <section class="results hidden"></section>
         </div>
-        <div class="w-1/4 flex-wrap flex-auto p-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black shadow-md">
-            <h3 class="text-3xl px-4 pb-4">Saved Recipes</h3>
+        <div class="w-1/4 flex-wrap flex-auto p-8 justify-items-stretch bg-amber-200 rounded-lg border-4 border-black shadow-md justify-center">
+            <h3 class="text-3xl px-4 pb-4 text-center">Saved Recipes</h3>
             <section class="savedlist hidden"></section>
         </div>
     </section>

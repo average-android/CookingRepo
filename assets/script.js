@@ -22,15 +22,15 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkSearch.
 
 
 
-// mealButton.addEventListener("click", function(event) {
-  // event.preventDefault();
+mealButton.addEventListener("click", mealSubmit) 
 
-
-fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealSearch)
+function mealSubmit (event){
+  event.preventDefault();
+fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealSearch.value)
 .then(function (response) {
   return response.json();
 })
 .then(function (data) {
   console.log(data);
 });
-// });
+};

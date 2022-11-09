@@ -12,9 +12,22 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkSearch.
 })
 .then(function (data) {
   console.log(data);
+  displayDrink(data)
 });
-}
-;
+};
+
+function displayDrink(data) {
+  const cocktail = data.drinks[0];
+  const drinkDiv = document.getElementById("cocktail");
+  const drinkName = cocktail.strDrink;
+  const heading = document.createElement("h1");
+  heading.innerHTML = drinkName;
+// drinkDiv.appendChild(heading);
+const drinkImg = document.createElement("img");
+drinkImg.src = cocktail.strDrinkThumb;
+// drinkDiv.appendChild(drinkImg);
+
+}   
 
 
 

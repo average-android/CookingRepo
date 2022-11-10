@@ -46,7 +46,7 @@ drink.appendChild(drinkImg);
 }   
 function displaymeal(data) {
   const food = data.meals[0];
-  const mealName =meal.strMeal;
+  const mealName =food.strMeal;
   const heading = document.createElement("h1");
   heading.innerHTML = mealName;
 meal.appendChild(heading);

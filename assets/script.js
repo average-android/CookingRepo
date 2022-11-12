@@ -12,7 +12,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkSearch.
 })
 .then(function (data) {
   console.log(data);
-  displayDrink(data)
+  displayDrink(data.drinks[0])
 });
 };
 
@@ -31,35 +31,49 @@ fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealSearch.value
 
 // Display from searches
 
-function displayDrink(data) {
-  const drinkEl = getElementById("drink");
-  const cocktail = data.drinks[0];
-  const drinkName = cocktail.strDrink;
+function displayDrink(drink, isSaved) {
+  const drinkName = drink.strDrink;
   // create container
   const result = document.createElement("form");
+  result.id = "drinkForm";
   result.className = "w-96 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
   drinkEl.appendChild(result);
   // image
   const drinkImg = document.createElement("img");
   drinkImg.className = "w-32 float-left mr-4 rounded-l-lg"
-  drinkImg.src = cocktail.strDrinkThumb;
+  drinkImg.src = drink.strDrinkThumb;
   result.appendChild(drinkImg);
   // header
   const heading = document.createElement("h3");
   heading.innerHTML = drinkName;
   result.appendChild(heading);
-  // save button
-  const saveBtn = document.createElement("button");
-  saveBtn.className = "float-right bg-white rounded-full";
-  saveBtn.innerHTML = "⭐"
-  result.appendChild(saveBtn);
+
+  if(isSaved){
+    const delBtn = document.createElement("button");
+    delBtn.id = "delBtn";
+    delBtn.className = "float-right bg-white rounded-full";
+    delBtn.innerHTML = "❌";
+    result.appendChild(delBtn);
+    // TODO: delBtn.addEventListener('click', saveLocal.bind(null, drink))
+    document.getElementById("savedlist").appendChild(result);
+    } else {
+    // save button
+    const saveBtn = document.createElement("button");
+    saveBtn.id = "saveBtnDrink";
+    saveBtn.className = "float-right bg-white rounded-full";
+    saveBtn.innerHTML = "⭐";
+    result.appendChild(saveBtn);
+    saveBtn.addEventListener('click', saveLocal.bind(null, drink));
+
+    document.getElementById("drink").appendChild(result);
+  }
 }   
 
 function displaymeal(food, isSaved) {
   const mealName =food.strMeal;
   // create container
   const result = document.createElement("form");
-  result.id = "mealForm"
+  result.id = "mealForm";
   result.className = "w-96 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
   // image
   const mealImg = document.createElement("img");

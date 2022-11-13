@@ -126,19 +126,8 @@ function saveLocalDrink(drink, e){
   let currentList = JSON.parse(localStorage.getItem("savedlist"));
   currentList.push(drink);
   localStorage.setItem("savedlist", JSON.stringify(currentList));
-  displaymeal(drink, true);
+  displayDrink(drink, true);
 }
-
-// const savedBuilder = (form) => {
-//   const recipe = document.createElement("li");
-//   recipe.innerHTML = form + '<button onclick="deleteNote(this)>❌</button>';
-//   savedList.appendChild(recipe);
-// };
-
-// const getRecipes = JSON.parse(localStorage.getItem("savedlist"));
-// getRecipes.forEach((recipe) => {
-//   savedBuilder(recipe);
-// });
 
 const deleteRecipe = (btn) => {
   let btnEl = btn.parentNode;
@@ -147,5 +136,3 @@ const deleteRecipe = (btn) => {
   localStorage.setItem("savedlist", JSON.stringify(localStorage.getItem("savedlist")));
   btnEl.remove();
 }
-
-// mealSave.on('click', saveLocal);

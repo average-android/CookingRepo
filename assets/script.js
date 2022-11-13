@@ -53,7 +53,7 @@ function displayDrink(drink, isSaved) {
     delBtn.className = "float-right bg-white rounded-full";
     delBtn.innerHTML = "❌";
     result.appendChild(delBtn);
-    // TODO: delBtn.addEventListener('click', saveLocal.bind(null, drink))
+    delBtn.addEventListener('click', deleteRecipe.bind(null, drink));
     document.getElementById("savedlist").appendChild(result);
     } else {
     // save button
@@ -90,7 +90,7 @@ function displaymeal(food, isSaved) {
     delBtn.className = "float-right bg-white rounded-full";
     delBtn.innerHTML = "❌";
     result.appendChild(delBtn);
-    // TODO: delBtn.addEventListener('click', saveLocal.bind(null, food))
+    delBtn.addEventListener('click', deleteRecipe.bind(null, food));
     document.getElementById("savedlist").appendChild(result);
     } else {
     // save button
@@ -107,7 +107,7 @@ function displaymeal(food, isSaved) {
 
 // Save Button code
 // const mealSave = document.getElementById("saveBtnMeal");
-const savedList = document.getElementById("savedlist");
+// const savedList = document.getElementById("savedlist");
 
 if(!localStorage.getItem("savedlist")){
   localStorage.setItem("savedlist", JSON.stringify([]));
@@ -129,10 +129,28 @@ function saveLocalDrink(drink, e){
   displayDrink(drink, true);
 }
 
-const deleteRecipe = (btn) => {
-  let btnEl = btn.parentNode;
-  const index = [...btnEl.parentElement.children].indexOf(btnEl);
-  savedStorage.splice(index, 1);
-  localStorage.setItem("savedlist", JSON.stringify(localStorage.getItem("savedlist")));
-  btnEl.remove();
+function deleteRecipe(item) {
+  let list = JSON. parse(localStorage.getItem("savedlist"));
+  for(let i = 0; i < list.length; i++){
+    if(list[i] == item){
+      list[i].splice(i, 1);
+    }
+  }
+  list = JSON.stringify(list);
+  localStorage.setItem("savedlist", list);
+  // let btnEl = btn.parentNode;
+  // const index = [...btnEl.parentElement.children].indexOf(btnEl);
+  // savedStorage.splice(index, 1);
+  // localStorage.setItem("savedlist", JSON.stringify(localStorage.getItem("savedlist")));
+  // btnEl.remove();
+}
+
+// display saved searches first
+let storageList = JSON.parse(localStorage.getItem("savedlist"));
+for (let j = 0; j < storageList.length; j++){
+  if(storageList[j][2] == "Alcoholic" || storageList[j][2] == "Non alcoholic"){
+    displayDrink(storageList[j], true);
+  } else {
+    displaymeal(storageList[j], true);
+  }
 }

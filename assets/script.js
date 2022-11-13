@@ -126,7 +126,7 @@ function saveLocalDrink(drink, e){
   let currentList = JSON.parse(localStorage.getItem("savedlist"));
   currentList.push(drink);
   localStorage.setItem("savedlist", JSON.stringify(currentList));
-  displaymeal(drink, true);
+  displayDrink(drink, true);
 }
 
 // const savedBuilder = (form) => {

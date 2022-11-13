@@ -37,7 +37,6 @@ function displayDrink(drink, isSaved) {
   const result = document.createElement("form");
   result.id = "drinkForm";
   result.className = "w-96 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
-  drinkEl.appendChild(result);
   // image
   const drinkImg = document.createElement("img");
   drinkImg.className = "w-32 float-left mr-4 rounded-l-lg"
@@ -63,7 +62,7 @@ function displayDrink(drink, isSaved) {
     saveBtn.className = "float-right bg-white rounded-full";
     saveBtn.innerHTML = "⭐";
     result.appendChild(saveBtn);
-    saveBtn.addEventListener('click', saveLocal.bind(null, drink));
+    saveBtn.addEventListener('click', saveLocalDrink.bind(null, drink));
 
     document.getElementById("drink").appendChild(result);
   }
@@ -100,7 +99,7 @@ function displaymeal(food, isSaved) {
     saveBtn.className = "float-right bg-white rounded-full";
     saveBtn.innerHTML = "⭐";
     result.appendChild(saveBtn);
-    saveBtn.addEventListener('click', saveLocal.bind(null, food));
+    saveBtn.addEventListener('click', saveLocalMeal.bind(null, food));
 
     document.getElementById("meal").appendChild(result);
   }
@@ -114,12 +113,20 @@ if(!localStorage.getItem("savedlist")){
   localStorage.setItem("savedlist", JSON.stringify([]));
 }
 
-function saveLocal(food, e){
+function saveLocalMeal(food, e){
   e.preventDefault();
   let currentList = JSON.parse(localStorage.getItem("savedlist"));
   currentList.push(food);
   localStorage.setItem("savedlist", JSON.stringify(currentList));
   displaymeal(food, true);
+}
+
+function saveLocalDrink(drink, e){
+  e.preventDefault();
+  let currentList = JSON.parse(localStorage.getItem("savedlist"));
+  currentList.push(drink);
+  localStorage.setItem("savedlist", JSON.stringify(currentList));
+  displaymeal(drink, true);
 }
 
 // const savedBuilder = (form) => {

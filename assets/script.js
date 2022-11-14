@@ -56,11 +56,3 @@ meal.appendChild(mealImg);
 }   
 
 
-// -- Schedule Code Below -- \\
-
-$(".saveBtn").click(function (event) {
-  event.preventDefault();
-  var saveData = $(this).siblings(".description").val();
-  console.log(saveData);
-  localStorage.setItem(saveData);
-});

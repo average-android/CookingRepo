@@ -11,7 +11,6 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkSearch.
   return response.json();
 })
 .then(function (data) {
-  console.log(data);
   displayDrink(data.drinks[0])
 });
 };
@@ -24,7 +23,6 @@ fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealSearch.value
   return response.json();
 })
 .then(function (data) {
-  console.log(data);
   displaymeal(data.meals[0]);
 });
 };
@@ -135,7 +133,12 @@ function deleteRecipe(item) {
     if(list[i] == item){
       list[i].splice(i, 1);
     }
+
+    
   }
+
+  
+  
   list = JSON.stringify(list);
   localStorage.setItem("savedlist", list);
   // let btnEl = btn.parentNode;

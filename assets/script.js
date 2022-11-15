@@ -34,7 +34,7 @@ function displayDrink(drink, isSaved) {
   // create container
   const result = document.createElement("form");
   result.id = "drinkForm";
-  result.className = "w-96 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
+  result.className = "w-16 md:w-32 lg:w-64 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
   // image
   const drinkImg = document.createElement("img");
   drinkImg.className = "w-32 float-left mr-4 rounded-l-lg"
@@ -71,7 +71,7 @@ function displaymeal(food, isSaved) {
   // create container
   const result = document.createElement("form");
   result.id = "mealForm";
-  result.className = "w-96 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
+  result.className = "w-16 md:w-32 lg:w-64 text-2xl rounded-lg border-2 border-black shadow-md justify-center";
   // image
   const mealImg = document.createElement("img");
   mealImg.className = "w-32 float-left mr-4 rounded-l-lg"
@@ -130,8 +130,8 @@ function saveLocalDrink(drink, e){
 function deleteRecipe(item) {
   let list = JSON. parse(localStorage.getItem("savedlist"));
   for(let i = 0; i < list.length; i++){
-    if(list[i] == item){
-      list[i].splice(i, 1);
+    if(list[i].idMeal === item.idMeal){
+      list.splice(i, 1);
     }
 
     
@@ -151,7 +151,7 @@ function deleteRecipe(item) {
 // display saved searches first
 let storageList = JSON.parse(localStorage.getItem("savedlist"));
 for (let j = 0; j < storageList.length; j++){
-  if(storageList[j][2] == "Alcoholic" || storageList[j][2] == "Non alcoholic"){
+  if(storageList[j].strAlcoholic === "Alcoholic" || storageList[j].strAlcoholic === "Non alcoholic"){
     displayDrink(storageList[j], true);
   } else {
     displaymeal(storageList[j], true);

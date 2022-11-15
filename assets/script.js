@@ -141,11 +141,6 @@ function deleteRecipe(item) {
   
   list = JSON.stringify(list);
   localStorage.setItem("savedlist", list);
-  // let btnEl = btn.parentNode;
-  // const index = [...btnEl.parentElement.children].indexOf(btnEl);
-  // savedStorage.splice(index, 1);
-  // localStorage.setItem("savedlist", JSON.stringify(localStorage.getItem("savedlist")));
-  // btnEl.remove();
 }
 
 // display saved searches first
